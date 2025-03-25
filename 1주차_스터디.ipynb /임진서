@@ -1,0 +1,428 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPlbhr1I3lRW+NDONetCOPu",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/AIDS-snowball/2025_1_Data_analysis/blob/main/1%EC%A3%BC%EC%B0%A8_%EC%8A%A4%ED%84%B0%EB%94%94.ipynb%20/%EC%9E%84%EC%A7%84%EC%84%9C\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# 1-3\n",
+        "## 파이썬으로 CSV파일 출력하기"
+      ],
+      "metadata": {
+        "id": "rENeuymrGd-F"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "with open('파일이름') as f:\n",
+        "  print(f.readline())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 168
+        },
+        "collapsed": true,
+        "id": "-X5-B54wGz8U",
+        "outputId": "411dbf26-82b8-4900-b728-fd03058fe421"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "FileNotFoundError",
+          "evalue": "[Errno 2] No such file or directory: '파일이름'",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mFileNotFoundError\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-2-06f67d954e52>\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0;32mwith\u001b[0m \u001b[0mopen\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'파일이름'\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0mf\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      2\u001b[0m   \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mf\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mreadline\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mFileNotFoundError\u001b[0m: [Errno 2] No such file or directory: '파일이름'"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "* chardet.detect() 함수에 데이터를 넣으면 어떤 인코딩을 사용하는지 출력."
+      ],
+      "metadata": {
+        "id": "3eMgV6DCI_VJ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "d = f.readline()\n",
+        "print(chardet.detect(d))"
+      ],
+      "metadata": {
+        "id": "11siZY1RJDSc"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "* 인코딩: 문자를 컴퓨터가 이해할 수 있는 0과 1의 이진(binary) 형태로 바꾸는 것을 의미."
+      ],
+      "metadata": {
+        "id": "a6QBFqPpMb1a"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "* 판다스에서 CSV파일 읽기: read_csv() 함수\n",
+        "* 줄여쓰기 예: numpy-> np 맷플롯립-> plt"
+      ],
+      "metadata": {
+        "id": "kDihfbg_ND_7"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "df = pd.read_csv('')"
+      ],
+      "metadata": {
+        "id": "1-QrJ_9INvOc"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "* as 키워드 사용하여 임포트할 패키지 이름 넣기"
+      ],
+      "metadata": {
+        "id": "7zhlFb38OCP_"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "* 데이터 타입, 자료형: 프로그래밍 언어, 패키지에서 다루는 데이터 종류를 의미.\n",
+        "* 판다스: 정수, 실수, 문자열, 불리언(boolean), 날짜 등의 데이터 타입 제공."
+      ],
+      "metadata": {
+        "id": "z0FknVm5OQ6o"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "* print() 함수: 자동으로 줄바꿈 문자(\\n)출력\n",
+        " - print(. end=''): 줄바꿈 문자 출력X"
+      ],
+      "metadata": {
+        "id": "bJNcfDI3QJR3"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "* index_col 매개변수: CSV파일에 인덱스가 이미 있다는 것을 알려줌."
+      ],
+      "metadata": {
+        "id": "_U401-t4Q8Qu"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## 1-3 정리\n",
+        "* 핵심 함수와 메서드\n",
+        " - pandas.read-csv() : CSV 파일을 읽어 데이터프레임을 만든다.\n",
+        " - DataFrame.head() : 데이터프레임에서 처음 다섯 개의 행을 반환한다.\n",
+        " - DataFrame.to_csv() : 데이터프레임을 CSV 파일로 저장한다."
+      ],
+      "metadata": {
+        "id": "d7yL4hB2RURY"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# 3-1\n",
+        "## 데이터 정제하기\n",
+        "불필요한 데이터 삭제하기"
+      ],
+      "metadata": {
+        "id": "QQhav7N7SIXY"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "* 열 삭제하기: gdown 패키지 사용해 데이터 다운로드"
+      ],
+      "metadata": {
+        "id": "umjjYvdyS9GV"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import gdown\n",
+        "gdown.download()"
+      ],
+      "metadata": {
+        "id": "UK5b4FK-SYYG"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "* drop() 메서드: 데이터프레임의 메서드 사용 행이나 열 삭제.\n",
+        " - 열 삭제: ('삭제하려는 열 이름', axis=1)\n",
+        "* dropna() 메서드: 판다스는 비어있는 값을 NaN으로 표시, dropna() 메서드는 기본적으로 NaN이 하나 이상 포함된 행이나 열을 삭제.\n",
+        " - dropna() 메서드에 how 매개변수를 all로 지정: 모든 값이 NaN인 열 삭제.\\\n",
+        "  예시: dropna(axis=1, how='all')\n",
+        "* duplicated() 메서드: 판다스 데이터프레임의 중복된 행 검사.\n",
+        "* 그룹별로 모으기\n",
+        " - groupby() 메서드\n",
+        "* drop_duplicates() 메서드: 중복된 행 삭제."
+      ],
+      "metadata": {
+        "id": "r7Bc_2BCTbCZ"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "* 원본 데이터 업데이트\n",
+        " 1. duplicated() 메서드로 중복된 행을 True로 표시한 불리언 배열을 만든다.\n",
+        " 2. 1번에서 구한 불리언 배열을 반전시켜서 중복되지 않은 고유한 행을 True로 표시한다.\n",
+        " 3. 2번에서 구한 불리언 배열을 사용해 원본 배열에서 고유한 행만 선택한다.\n",
+        "\n",
+        " 중복된 행을 True로 표시한 불리언 배열을 반전시킬 때: 판다스의 ~연산자 사용.\n",
+        " 원본 배열에서 고유한 배열을 선택하여 copy() 메서드로 ns_book3 데이터 프레임을 만든다.\n"
+      ],
+      "metadata": {
+        "id": "uGDZPUytXNr-"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "dup_rows = ns_book.duplicated(subset=['도서명','저자','ISBN','권']) # 1. 중복된 행을 True로 표시.\n",
+        "unique_rows = ~dup_rows # 2. 불리언 배열을 반전시켜 고유한 행을 True로 표시.\n",
+        "ns_book3 = ns_book[unique_rows].copy() # 3. 고유한 행만 선택"
+      ],
+      "metadata": {
+        "id": "B4pFZ-9tYN3W"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "* copy() 메서드: 데이터프레임의 복사본 제작."
+      ],
+      "metadata": {
+        "id": "mvXxYvwTZO3b"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "* set_index() 메사드: 지정한 열을 인덱스로 설정."
+      ],
+      "metadata": {
+        "id": "V3iU5ZTEZ2sa"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "* update() 메서드: 업데이트하기 (다른 데이터프레임을 사용해 원본 데이터프레임의 값을 업데이트할 때 사용)"
+      ],
+      "metadata": {
+        "id": "UOZPf8cbaBgU"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 예시 코드\n",
+        "ns_book3.update(loan_count)\n",
+        "ns_book3.head()"
+      ],
+      "metadata": {
+        "id": "eRu4-SwPaWSI"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 업데이트가 제대로 된 경우 인덱스 열 해지. reset_index() 메서드: 데이터프레임 인덱스 재설정.\n",
+        "# 예시 코드\n",
+        "ns_book4 = ns_book3.reset_index()\n",
+        "ns_book4.head()\n",
+        "\n",
+        "# 열을 인덱스로 설정할 때 set_index() 메서드 사용.\n",
+        "# 재설정할 때 reset_index() 메서드 사용."
+      ],
+      "metadata": {
+        "id": "DJGFXb--atja"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 열 순서를 바꾸는 가장 간단한 방법: [] 연산자에 원하는 열 이름을 순서대로 전달.\n",
+        "# 예시 코드\n",
+        "ns_book4 = ns_book4[ns_book4.columns] # ns_book 데이터프레임의 열 이름 전달.\n",
+        "ns_book4.head"
+      ],
+      "metadata": {
+        "id": "qxbhy0FobYLq"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## 3-1 정리"
+      ],
+      "metadata": {
+        "id": "1CpWEiftcBXD"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "데이터프레임에서 불필요한 데이터를 제거하는 방법.\n",
+        "* 열을 삭제하는 방법\n",
+        " - loc 메서드에 슬라이싱, 불리언 배열 적용.\n",
+        " - drop() 메서드 사용.\n",
+        "* 행을 삭제하는 방법\n",
+        " - [] 연산자, 슬라이싱, 불리언 배열\n",
+        "* 중복된 행을 찾는 방법\n",
+        " - groupby() 메서드, sum() 메서드 사용: 중복된 행을 합치기.\n",
+        " - update() 메서드 사용: 원본 데이터프레임에 업데이트하기. (set_index() 메서드, reset_index() 메서드: 인덱스를 기준으로 업데이트하기.)"
+      ],
+      "metadata": {
+        "id": "wsGXjEx4jMZl"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## 일괄 처리 함수 만들기\n",
+        "* data_cleaning() : 코드를 일괄 처리하는 함수."
+      ],
+      "metadata": {
+        "id": "a74z7qECaikQ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 예시 코드\n",
+        "def data_cleaning(filename):"
+      ],
+      "metadata": {
+        "id": "BUcHtbX6fmrS"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "* equals() 메서드: 다른 데이터프레임 비교."
+      ],
+      "metadata": {
+        "id": "F-qwBcpmfxKz"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 예시 코드\n",
+        "new_ns_book4 = data_cleaning('ns_202104.csv')\n",
+        "ns_book4.equals(new_ns_book4)"
+      ],
+      "metadata": {
+        "id": "Db9E_lqlf73Q"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "* numpy : 파이썬의 대표적인 다차원 배열.\\\n",
+        "판다스의 데이터프레임과 달리 한 종류의 데이터만 담을 수 있지만 효율적이고 성능이 높다.\\\n",
+        "파이썬의 다른 과학 패키지와 호환성이 높으며 기본 데이터 구조로 널리 사용된다."
+      ],
+      "metadata": {
+        "id": "xUCe0a_ugWPZ"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## 표를 정리하는 핵심 함수와 메서드"
+      ],
+      "metadata": {
+        "id": "lCZ4C7cogzEi"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "* DataFrame.drop() : 데이터프레임의 행이나 열을 삭제한다.\n",
+        "* DataFrame.dopna() : 누락된 값이 포함된 행이나 열을 삭제한다.\n",
+        "* DataFrame.duplicated() : 중복된 행을 찾아 불리언 값으로 표시한 배열을 반환한다.\n",
+        "* DataFrame.groupby() : 데이터프레임의 행을 그룹으로 모은다.\n",
+        "* DataFrame.sum() : 행 또는 열을 기준으로 합계를 계산한다.\n",
+        "* DataFrame.set_index() : 지정한 열을 인덱스로 설정한다.\n",
+        "* DataFrame.reset_index() : 데이터프레임의 인덱스를 재설정한다.\n",
+        "* DataFrame.update() : 다른 데이터프레임을 사용해 원본 데이터프레임의 값을 업데이트한다. 다른 데이터프레임에 있는 NaN은 업데이트에서 제외한다.\n",
+        "* DataFrame.equals() : 다른 데이터프레임과 동일한 원소를 가졋는지 비교한다. 두 데이터프레임이 동일하면 True, 그렇지 않으면 False를 반환한다."
+      ],
+      "metadata": {
+        "id": "dW9BVWaZi-is"
+      }
+    }
+  ]
+}
